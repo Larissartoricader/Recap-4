@@ -1,0 +1,14 @@
+.colorbox-preview-container {
+  border-radius: 10px;
+  display: flex;
+  gap: 10px;
+  justify-content: space-between;
+  height: 12vh;
+}
+
+.colorbox-preview-colors {
+  background-color: hotpink;
+  height: 100%;
+  width: 20%;
+  border-radius: 10px;
+}

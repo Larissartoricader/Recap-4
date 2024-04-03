@@ -1,13 +1,19 @@
 import "./App.css";
-import ColorsBox from "./components/ColorsBox";
 import Header from "./components/Header";
+import Theme from "./components/Theme";
 import { themes } from "./db";
 
 function App() {
   return (
     <div>
       <Header />
-      <ColorsBox themes={themes} />
+      <div className="theme-list">
+        {themes.map((theme) => (
+          <div key={theme.id}>
+            <Theme theme={theme} />
+          </div>
+        ))}
+      </div>
     </div>
   );
 }
