@@ -1,0 +1,7 @@
+.header_container {
+  display: flex;
+  justify-content: center;
+  background-color: var(--backgroundColor);
+  border-radius: 10px;
+  margin: 10px;
+}
