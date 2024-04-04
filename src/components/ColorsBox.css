@@ -1,16 +1,33 @@
-.colorbox-delete {
-  background-color: #d24545;
+.colorbox-buttons {
+  display: flex;
+  gap: 10px;
+  justify-content: center;
+}
+
+.colorbox-edit {
+  background-color: white;
+  color: #57886c;
+  border-radius: 15px;
+  border: solid 5px #4e6e5f;
+  width: 40vw;
+  height: 5vh;
+}
+
+.colorbox-edit:hover {
+  background-color: #57886c;
   color: white;
+}
+
+.colorbox-delete {
+  background-color: white;
+  color: #d24545;
   border-radius: 15px;
   border: solid 5px brown;
-  width: 50vw;
+  width: 40vw;
   height: 5vh;
-  position: relative;
-  left: 25%;
-  margin-top: 10px;
 }
 
 .colorbox-delete:hover {
-  background-color: white;
-  color: #d24545;
+  background-color: #d24545;
+  color: white;
 }
