@@ -26,7 +26,7 @@ import { useState } from "react";
 //   );
 // }
 
-export default function Theme({ theme }) {
+export default function Theme({ theme, onDeleteTheme }) {
   const [showDetail, setShowDetail] = useState(false);
 
   function handleDetailButton() {
@@ -39,7 +39,7 @@ export default function Theme({ theme }) {
         <h2>{`${theme.name} ﹀ `}</h2>
       </div>
       <ColorsBoxPreview theme={theme} />
-      {showDetail && <ColorsBox theme={theme} />}
+      {showDetail && <ColorsBox theme={theme} onDeleteTheme={onDeleteTheme} />}
     </div>
   );
 }
