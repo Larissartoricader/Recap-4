@@ -5,13 +5,10 @@ export default function Form({ onAddTheme }) {
     event.preventDefault();
     const formData = new FormData(event.target);
     const data = Object.fromEntries(formData);
+    event.target.elements.name.focus();
     console.log(data);
-    onAddTheme(primary, secondary, surface, surfaceOn);
-    const primary = data.primary;
-    const secondary = data.secondary;
-    const surface = data.surface;
-    const surfaceOn = data.surfaceon;
-    event.target.elements.themeName.focus();
+    onAddTheme(data);
+    // console.log(primary + secondary);
     event.target.reset();
   }
 
@@ -19,12 +16,12 @@ export default function Form({ onAddTheme }) {
     <div>
       <h2>Your Theme</h2>
       <form className="form-container" onSubmit={handleSubmit}>
-        <label htmlFor="themeName">Add a your Theme</label>
+        <label htmlFor="name">Add a your Theme</label>
         <input
           type="text"
           placeholder="Write your theme name"
-          id="themeName"
-          name="themeName"
+          id="name"
+          name="name"
           required
         ></input>
         <label>Pick your colors</label>
