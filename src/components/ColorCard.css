@@ -24,3 +24,6 @@
 .colorcard-box {
   border-radius: 0 15px 15px 0;
 }
+.colorcard_container p {
+  margin-left: 10px;
+}
