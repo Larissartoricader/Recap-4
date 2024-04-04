@@ -1,11 +1,16 @@
 import "./Form.css";
 
-export default function Form() {
+export default function Form({ onAddTheme }) {
   function handleSubmit(event) {
     event.preventDefault();
     const formData = new FormData(event.target);
     const data = Object.fromEntries(formData);
     console.log(data);
+    onAddTheme(primary, secondary, surface, surfaceOn);
+    const primary = data.primary;
+    const secondary = data.secondary;
+    const surface = data.surface;
+    const surfaceOn = data.surfaceon;
     event.target.elements.themeName.focus();
     event.target.reset();
   }
@@ -27,26 +32,30 @@ export default function Form() {
           <input
             className="pick-color"
             type="color"
-            id="color1"
-            name="color1"
+            id="primary"
+            name="primary"
+            defaultValue="#1DDA82"
           ></input>
           <input
             className="pick-color"
             type="color"
-            id="color2"
-            name="color2"
+            id="secondary"
+            name="secondary"
+            defaultValue="#D908E8"
           ></input>
           <input
             className="pick-color"
             type="color"
-            id="color3"
-            name="color3"
+            id="surface"
+            name="surface"
+            defaultValue="#94FF28"
           ></input>
           <input
             className="pick-color"
             type="color"
-            id="color4"
-            name="color4"
+            id="surfaceon"
+            name="surfaceon"
+            defaultValue="#C93E55"
           ></input>
         </div>
         <button type="submit" className="pick-color-button">
