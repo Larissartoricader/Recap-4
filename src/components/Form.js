@@ -6,7 +6,6 @@ export default function Form({ onAddTheme }) {
     const formData = new FormData(event.target);
     const data = Object.fromEntries(formData);
     event.target.elements.name.focus();
-    console.log(data);
     onAddTheme(data);
     // console.log(primary + secondary);
     event.target.reset();

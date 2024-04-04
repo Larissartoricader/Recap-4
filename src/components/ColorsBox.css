@@ -1,2 +1,16 @@
-.colorsbox_container {
+.colorbox-delete {
+  background-color: #d24545;
+  color: white;
+  border-radius: 15px;
+  border: solid 5px brown;
+  width: 50vw;
+  height: 5vh;
+  position: relative;
+  left: 25%;
+  margin-top: 10px;
+}
+
+.colorbox-delete:hover {
+  background-color: white;
+  color: #d24545;
 }

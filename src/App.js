@@ -10,8 +10,6 @@ function App() {
   const [themes, setThemes] = useState(initialThemes);
 
   function handleAddTheme(newTheme) {
-    console.log(newTheme);
-    // setThemes([...themes, { ...newTheme, id: uuid() }]);
     setThemes([
       {
         id: uuid(),
@@ -26,6 +24,10 @@ function App() {
       ...themes,
     ]);
   }
+
+  function handleDeleteTheme(id) {
+    setThemes(themes.filter((theme) => theme.id !== id));
+  }
   console.log(themes);
   return (
     <div>
@@ -34,7 +36,7 @@ function App() {
       <div className="theme-list">
         {themes.map((theme) => (
           <div key={theme.id}>
-            <Theme theme={theme} />
+            <Theme theme={theme} onDeleteTheme={handleDeleteTheme} />
           </div>
         ))}
       </div>
