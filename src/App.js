@@ -12,10 +12,10 @@ function App() {
     defaultValue: initialThemes,
   });
 
-  const [editing, setEditing] = useState(false);
-
+  const [isEditing, setIsEditing] = useState(false);
   function handleEditTheme() {
-    setEditing(editing === "edit" ? "Save Edition" : "Edit");
+    console.log("Edit Button pressed");
+    setIsEditing(!isEditing);
   }
 
   function handleAddTheme(newTheme) {
@@ -49,7 +49,7 @@ function App() {
               theme={theme}
               onDeleteTheme={handleDeleteTheme}
               onEditTheme={handleEditTheme}
-              editing={editing}
+              isEditing={isEditing}
             />
           </div>
         ))}
@@ -59,17 +59,3 @@ function App() {
 }
 
 export default App;
-
-// return (
-//   <div>
-//     <Header />
-//     <Form onAddTheme={handleAddTheme} />
-//     <div className="theme-list">
-//       {themes.map((theme) => (
-//         <div key={theme.id}>
-//           <Theme theme={theme} onDeleteTheme={handleDeleteTheme} />
-//         </div>
-//       ))}
-//     </div>
-//   </div>
-// );
