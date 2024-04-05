@@ -8,6 +8,7 @@ export default function Theme({
   onDeleteTheme,
   onEditTheme,
   isEditing,
+  onAddTheme,
 }) {
   const [showDetail, setShowDetail] = useState(false);
 
@@ -27,6 +28,7 @@ export default function Theme({
           onDeleteTheme={onDeleteTheme}
           onEditTheme={onEditTheme}
           isEditing={isEditing}
+          onAddTheme={onAddTheme}
         />
       ) : (
         <ColorsBoxPreview theme={theme} />
@@ -34,12 +36,3 @@ export default function Theme({
     </div>
   );
 }
-
-// Part 6:
-// 1. New Edit Button in Detail Color Box - DONE
-
-// 2. Edit the already existing Form using defaultValue={newTheme.primary} same for (Name  and 3 more Colors)
-
-//Question: Do I use "newTheme.primary" like in the App.js?
-
-// 3. Inside the theme, do I create a new State that is operated by the Edit Button and ovewrite the initial State operate by the Name-Color-Button?

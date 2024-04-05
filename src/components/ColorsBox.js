@@ -1,4 +1,3 @@
-import { useState } from "react";
 import ColorCard from "./ColorCard";
 import "./ColorsBox.css";
 
@@ -9,6 +8,7 @@ export default function ColorsBox({
   onDeleteTheme,
   onEditTheme,
   isEditing,
+  onAddTheme,
 }) {
   return (
     <div>
@@ -25,7 +25,7 @@ export default function ColorsBox({
       </div>
 
       {isEditing ? (
-        <EditForm theme={theme} />
+        <EditForm theme={theme} onAddTheme={onAddTheme} />
       ) : (
         <div>
           {theme.colors.map((color, index) => (
