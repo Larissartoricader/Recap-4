@@ -6,7 +6,6 @@ export default function EditForm({ theme }) {
     <div className="edit_box">
       <h1>Edit Form</h1>
       <Form theme={theme} />
-      {/* <Form theme={theme} /> */}
     </div>
   );
 }

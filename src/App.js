@@ -75,7 +75,7 @@ function App() {
             <Theme
               theme={theme}
               onDeleteTheme={handleDeleteTheme}
-              onEditTheme={handleEditButton}
+              onEditButton={handleEditButton}
               isEditing={isEditing}
             />
           </div>
