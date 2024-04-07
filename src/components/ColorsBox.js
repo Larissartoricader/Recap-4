@@ -1,20 +1,38 @@
 import ColorCard from "./ColorCard";
 import "./ColorsBox.css";
 
-export default function ColorsBox({ theme, onDeleteTheme, id }) {
+import EditForm from "./EditForm";
+
+export default function ColorsBox({
+  theme,
+  onDeleteTheme,
+  onEditTheme,
+  isEditing,
+  onAddTheme,
+}) {
   return (
     <div>
-      <div>
-        {theme.colors.map((color, index) => (
-          <ColorCard key={index} color={color} />
-        ))}
+      <div className="colorbox-buttons">
+        <button className="colorbox-edit" onClick={onEditTheme}>
+          {isEditing ? "Close Edition" : "Edit"}
+        </button>
+        <button
+          className="colorbox-delete"
+          onClick={() => onDeleteTheme(theme.id)}
+        >
+          Delete
+        </button>
       </div>
-      <button
-        className="colorbox-delete"
-        onClick={() => onDeleteTheme(theme.id)}
-      >
-        DELETE
-      </button>
+
+      {isEditing ? (
+        <EditForm theme={theme} onAddTheme={onAddTheme} />
+      ) : (
+        <div>
+          {theme.colors.map((color, index) => (
+            <ColorCard key={index} color={color} />
+          ))}
+        </div>
+      )}
     </div>
   );
 }

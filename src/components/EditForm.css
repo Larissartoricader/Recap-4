@@ -1,0 +1,7 @@
+.edit_box {
+  border: solid 2px #d3d4df;
+  margin: 10px;
+  padding: 5px;
+  background-color: lightgray;
+  border-radius: 10px;
+}
