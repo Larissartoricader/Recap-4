@@ -6,9 +6,8 @@ import { useState } from "react";
 export default function Theme({
   theme,
   onDeleteTheme,
-  onEditTheme,
+  onEditButton,
   isEditing,
-  onAddTheme,
 }) {
   const [showDetail, setShowDetail] = useState(false);
 
@@ -26,9 +25,8 @@ export default function Theme({
         <ColorsBox
           theme={theme}
           onDeleteTheme={onDeleteTheme}
-          onEditTheme={onEditTheme}
+          onEditButton={onEditButton}
           isEditing={isEditing}
-          onAddTheme={onAddTheme}
         />
       ) : (
         <ColorsBoxPreview theme={theme} />

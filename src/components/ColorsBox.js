@@ -6,14 +6,13 @@ import EditForm from "./EditForm";
 export default function ColorsBox({
   theme,
   onDeleteTheme,
-  onEditTheme,
+  onEditButton,
   isEditing,
-  onAddTheme,
 }) {
   return (
     <div>
       <div className="colorbox-buttons">
-        <button className="colorbox-edit" onClick={onEditTheme}>
+        <button className="colorbox-edit" onClick={onEditButton}>
           {isEditing ? "Close Edition" : "Edit"}
         </button>
         <button
@@ -25,7 +24,7 @@ export default function ColorsBox({
       </div>
 
       {isEditing ? (
-        <EditForm theme={theme} onAddTheme={onAddTheme} />
+        <EditForm theme={theme} />
       ) : (
         <div>
           {theme.colors.map((color, index) => (
