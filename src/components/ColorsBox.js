@@ -8,6 +8,7 @@ export default function ColorsBox({
   onDeleteTheme,
   onEditButton,
   isEditing,
+  onSaveEdit,
 }) {
   return (
     <div>
@@ -24,7 +25,7 @@ export default function ColorsBox({
       </div>
 
       {isEditing ? (
-        <EditForm theme={theme} />
+        <EditForm theme={theme} onSaveEdit={onSaveEdit} />
       ) : (
         <div>
           {theme.colors.map((color, index) => (

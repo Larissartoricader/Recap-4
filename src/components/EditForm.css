@@ -5,3 +5,31 @@
   background-color: lightgray;
   border-radius: 10px;
 }
+
+.form-edit-container {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  border: dashed black 1px;
+  padding: 0 0 15px 0;
+}
+
+.form-edit-pick-colors {
+  display: flex;
+  justify-content: space-between;
+  gap: 10px;
+  height: 12vh;
+}
+.edit-pick-color {
+  width: 20%;
+  height: 100%;
+  border-radius: 10px;
+}
+
+input[type="color"]::-webkit-color-swatch {
+  border-radius: 10px;
+  border: 1px solid #ccc;
+}
+.edit-pick-color-button {
+  width: 50%;
+}

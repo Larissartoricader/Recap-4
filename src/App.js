@@ -45,6 +45,15 @@ function App() {
     setIsEditing(!isEditing);
   }
 
+  function handleSaveEdit(editedTheme) {
+    setThemes((prevThemes) =>
+      prevThemes.map((theme) =>
+        theme.id === editedTheme.id ? editedTheme : theme
+      )
+    );
+    setIsEditing(false);
+  }
+
   function handleAddTheme(newTheme) {
     setThemes([
       {
@@ -77,6 +86,7 @@ function App() {
               onDeleteTheme={handleDeleteTheme}
               onEditButton={handleEditButton}
               isEditing={isEditing}
+              onSaveEdit={handleSaveEdit}
             />
           </div>
         ))}
