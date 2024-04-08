@@ -5,8 +5,42 @@
   justify-content: center;
 }
 .TryOut-button {
-  background-color: var(--backgroundColor);
+  background-color: #b3c8cf;
   border-radius: 10px;
   height: 7vh;
-  margin-top: 1px;
+  margin: 10px;
+  font-size: larger;
+}
+.TryOut-box {
+  margin: 20px;
+}
+
+.TryOut-txt {
+  text-align: justify;
+}
+
+.TryOut-highlightbox {
+  border: solid 5px black;
+  padding: 5px;
+  border-radius: 10px;
+}
+.TryOut-highlightbox-headline {
+  text-align: center;
+}
+.TryOut-highlightbox-txt {
+  text-align: justify;
+  margin: 25px;
+}
+.TryOut-buttons-box {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin: 10px;
+}
+
+.TryOut-button_test {
+  border-radius: 10px;
+  height: 5vh;
+  margin: 10px;
+  font-size: larger;
 }

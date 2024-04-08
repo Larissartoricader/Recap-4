@@ -83,7 +83,7 @@ function App() {
   return (
     <div>
       {showTryOut ? (
-        <TryOut />
+        <TryOut onCloseTryOut={handleTryOutButton} showTryOut={showTryOut} />
       ) : (
         <>
           <Header />
@@ -98,6 +98,7 @@ function App() {
                   isEditing={isEditing}
                   onSaveEdit={handleSaveEdit}
                   onTryOutButton={handleTryOutButton}
+                  showTryOut={showTryOut}
                 />
               </div>
             ))}

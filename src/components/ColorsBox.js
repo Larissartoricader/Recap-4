@@ -15,7 +15,7 @@ export default function ColorsBox({
     <div>
       <div className="colorbox-buttons">
         <button className="colorbox-tryout" onClick={onTryOutButton}>
-          Try Out
+          Try
         </button>
         <button className="colorbox-edit" onClick={onEditButton}>
           {isEditing ? "Close Edition" : "Edit"}
