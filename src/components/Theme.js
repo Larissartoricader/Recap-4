@@ -9,6 +9,7 @@ export default function Theme({
   onEditButton,
   isEditing,
   onSaveEdit,
+  onTryOutButton,
 }) {
   const [showDetail, setShowDetail] = useState(false);
 
@@ -29,6 +30,7 @@ export default function Theme({
           onEditButton={onEditButton}
           isEditing={isEditing}
           onSaveEdit={onSaveEdit}
+          onTryOutButton={onTryOutButton}
         />
       ) : (
         <ColorsBoxPreview theme={theme} />
