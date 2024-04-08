@@ -6,6 +6,7 @@ import Form from "./components/Form";
 import { useState } from "react";
 import { v4 as uuid } from "uuid";
 import useLocalStorageState from "use-local-storage-state";
+import TryOut from "./components/TryOut";
 
 const initialTheme = {
   id: "0",
@@ -74,23 +75,36 @@ function App() {
     setThemes(themes.filter((theme) => theme.id !== id));
   }
 
+  const [showTryOut, setShowTryOut] = useState(false);
+  function handleTryOutButton() {
+    setShowTryOut(!showTryOut);
+  }
+
   return (
     <div>
-      <Header />
-      <Form onAddTheme={handleAddTheme} theme={initialTheme} />
-      <div className="theme-list">
-        {themes.map((theme) => (
-          <div key={theme.id}>
-            <Theme
-              theme={theme}
-              onDeleteTheme={handleDeleteTheme}
-              onEditButton={handleEditButton}
-              isEditing={isEditing}
-              onSaveEdit={handleSaveEdit}
-            />
+      {showTryOut ? (
+        <TryOut onCloseTryOut={handleTryOutButton} showTryOut={showTryOut} />
+      ) : (
+        <>
+          <Header />
+          <Form onAddTheme={handleAddTheme} theme={initialTheme} />
+          <div className="theme-list">
+            {themes.map((theme) => (
+              <div key={theme.id}>
+                <Theme
+                  theme={theme}
+                  onDeleteTheme={handleDeleteTheme}
+                  onEditButton={handleEditButton}
+                  isEditing={isEditing}
+                  onSaveEdit={handleSaveEdit}
+                  onTryOutButton={handleTryOutButton}
+                  showTryOut={showTryOut}
+                />
+              </div>
+            ))}
           </div>
-        ))}
-      </div>
+        </>
+      )}
     </div>
   );
 }

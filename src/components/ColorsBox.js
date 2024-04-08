@@ -9,10 +9,14 @@ export default function ColorsBox({
   onEditButton,
   isEditing,
   onSaveEdit,
+  onTryOutButton,
 }) {
   return (
     <div>
       <div className="colorbox-buttons">
+        <button className="colorbox-tryout" onClick={onTryOutButton}>
+          Try
+        </button>
         <button className="colorbox-edit" onClick={onEditButton}>
           {isEditing ? "Close Edition" : "Edit"}
         </button>
