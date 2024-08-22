@@ -81,7 +81,7 @@ function App() {
   }
 
   return (
-    <div>
+    <div className="app-page">
       {showTryOut ? (
         <TryOut onCloseTryOut={handleTryOutButton} showTryOut={showTryOut} />
       ) : (
